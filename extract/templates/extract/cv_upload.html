@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static "extract\css\bootstrap.css" %}'>
+    <link rel="stylesheet" href='{% static "extract\css\style.css" %}'>
+    <title>Document</title>
+</head>
+
+<body class="">
+
+    <div class="container-fluid">
+        <div class="container mt-3 text-center bg-info">
+            <h1>CV’s can be downloaded in .XLS format. </h1>
+        </div>
+
+        <div class="container  text-center">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="ms-5 mt-5">
+                    {{ form.as_p}}
+                </div>
+                <button type="submit" class="me-5 mt-5">Download</button>
+            </form>
+        </div>
+      
+    </div>
+    <div class="footer-back bg-dark">
+        <h5 class="text-white text-center mt-2">Created by Girijesh Tripathi</h5>
+    </div>
+</body>
+
+</html>
